@@ -1,4 +1,24 @@
 Lebase::Application.routes.draw do
+  get "comments/create"
+
+  get "comments/destroy"
+
+  resources :posts do
+    resources :comments
+  end
+
+  resources :users   
+  resources :sessions,          only: [:new, :create, :destroy]
+
+  match '/signup',              to: 'users#new'
+  match '/signin',              to: 'sessions#new'
+  match '/signinerror',         to: 'sessions#newerror'
+  match '/signout',             to: 'sessions#destroy', via: :delete
+
+  root to: 'static_pages#home'
+
+  match '/codebase',        to: 'static_pages#codebase'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

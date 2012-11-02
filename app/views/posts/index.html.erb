@@ -1,0 +1,32 @@
+<% provide(:title, "Le Basecamp") %>
+
+<header class="jumbotron_subhead" id="overview">
+  <div class="container">
+    <h1>Le Basecamp</h1>
+  </div>
+</header>
+
+<div class="container textarea">
+  
+  <div class="row">
+    <div class="span10 offset1">
+        <p>
+          <%= link_to "neues Projekt erstellen", new_post_path %>
+        </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="span4 margin_little">
+        <h5 class="comment"><%= link_to post.title, post %></h5>
+        <p>
+        <%= time_ago_in_words post.created_at %> ago
+        </p>  
+        <p>
+        <%= truncate post.text %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>

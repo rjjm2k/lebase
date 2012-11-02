@@ -1,0 +1,18 @@
+<% provide(:title, "Projekt bearbeiten") %>
+
+<header class="jumbotron_subhead" id="overview">
+  <div class="container">
+    <h1>Projekt bearbeiten</h1>
+  </div>
+</header>
+
+<%= render 'form' %>
+
+<div class="container">
+	<div class="row">
+	  <div class="span6 offset3">
+	    <%= link_to 'Abbrechen', @post %> |
+		<%= link_to 'zu Le-Basecamp', posts_path %>
+	  </div>
+	</div>
+</div>

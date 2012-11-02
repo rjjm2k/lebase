@@ -1,0 +1,30 @@
+<header class="jumbotron_masthead">
+	<div class="container center">
+	  <h1 class="h1_main">Lé Base</h1>
+	  <h2 class="h2_main">
+	    Wo gute Ideen zuhause sind!
+	  </h2>
+	  <%= link_to "Registrierung!", signup_path, class: "btn btn-large btn-inverse buttonmargin" %>
+	</div>
+</header>
+<div class="container">
+	<div class="row">
+		<div class="span10 offset1">
+			<div class="marketing center">
+				<div id="myCarousel" class="carousel slide">
+				  <!-- Carousel items -->
+				  <div class="carousel-inner">
+				    <div class="active item"><%= image_tag("carousel_001.png", alt: "screenshot1") %></div>
+				    <div class="item"><%= image_tag("carousel_002.png", alt: "screenshot2") %></div>
+				    <div class="item"><%= image_tag("carousel_003.png", alt: "screenshot3") %></div>
+				    <div class="item"><%= image_tag("carousel_004.png", alt: "screenshot4") %></div>
+				    <div class="item"><%= image_tag("carousel_005.png", alt: "screenshot5") %></div>
+				  </div>
+				  <!-- Carousel nav -->
+				  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+				  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

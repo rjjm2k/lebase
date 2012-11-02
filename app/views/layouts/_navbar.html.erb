@@ -1,0 +1,42 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <% if signed_in? %>
+        <% if user_be_admin? %>
+        <%= link_to "Lé-Base", posts_path, id: "logo" %>
+        <% end %>
+        <% else %>
+        <%= link_to "Lé-Base", root_path, id: "logo" %>
+      <% end %>
+      
+        <nav class="nav- pull-right">
+          <ul class="nav">
+      <% if signed_in? %>
+        <% if user_be_admin? %>
+              <li><%= link_to "HOME", posts_path %></li>
+              <li><%= link_to "CODEBASE", codebase_path %></li>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Profil", current_user %></li>
+                  <li><%= link_to "Einstellungen", edit_user_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Abmelden", signout_path, method: "delete" %>
+                  </li>
+                </ul>
+              </li>
+        <% end %>   
+      <% else %>
+            <form class="form-inline" accept-charset="UTF-8" action="/sessions" method="post"> 
+              <input id="session_email" name="session[email]" type="text" class="input-small" placeholder="Email">
+              <input id="session_password" name="session[password]" type="password" class="input-small" placeholder="Password">
+              <input class="btn btn-large btn-info login" name="commit" type="submit" value="Sign in">
+            </form>  
+      <% end %>     
+          </ul>
+        </nav>
+    </div>
+  </div>
+</div>

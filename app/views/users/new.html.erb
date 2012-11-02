@@ -1,0 +1,32 @@
+<% provide(:title, 'Registrierung') %>
+
+<header class="jumbotron_subhead" id="overview">
+  <div class="container">
+    <h1>Registrierung</h1>
+  </div>
+</header>
+
+<div class="container textarea">
+  <div class="row">
+    <div class="span4 offset4">
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <%= f.label :password, "Passwort" %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation, "PW-Wiederholung" %>
+        <%= f.password_field :password_confirmation %>
+
+        <%= f.submit "Registrieren", class: "btn btn-large btn-inverse buttonmargin" %>
+
+      <% end %>
+    </div>
+  </div>     
+</div>

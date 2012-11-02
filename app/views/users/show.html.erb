@@ -1,0 +1,38 @@
+<% provide(:title, @user.name) %>
+
+<header class="jumbotron_subhead" id="overview">
+  <div class="container">
+    <h1><%= @user.name %></h1>
+  </div>
+</header>
+
+<div class="container textarea">
+
+  <div class="row">
+    <div class="span12">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <h3>
+          <%= gravatar_for @user %>
+          <%= @user.name %>
+        </h3>
+        <h4>
+          <%= @user.at_uni %><br>
+        </h4>
+      </section>
+    </aside>
+
+    <div class="span8">
+      <p>Probetext</p>
+    </div>
+
+</div>
