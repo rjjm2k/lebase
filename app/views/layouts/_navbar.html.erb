@@ -1,18 +1,10 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <% if signed_in? %>
-        <% if user_be_admin? %>
         <%= link_to "Lé-Base", posts_path, id: "logo" %>
-        <% end %>
-        <% else %>
-        <%= link_to "Lé-Base", root_path, id: "logo" %>
-      <% end %>
-      
         <nav class="nav- pull-right">
           <ul class="nav">
       <% if signed_in? %>
-        <% if user_be_admin? %>
               <li><%= link_to "HOME", posts_path %></li>
               <li><%= link_to "CODEBASE", codebase_path %></li>
               <li id="fat-menu" class="dropdown">
@@ -27,7 +19,6 @@
                   </li>
                 </ul>
               </li>
-        <% end %>   
       <% else %>
             <form class="form-inline" accept-charset="UTF-8" action="/sessions" method="post"> 
               <input id="session_email" name="session[email]" type="text" class="input-small" placeholder="Email">

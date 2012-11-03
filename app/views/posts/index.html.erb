@@ -10,7 +10,7 @@
   
   <div class="row">
     <div class="span10 offset1">
-        <p>
+        <p class="pcard">
           <%= link_to "neues Projekt erstellen", new_post_path %>
         </p>
     </div>
@@ -18,7 +18,7 @@
 
   <div class="row">
     <% @posts.each do |post| %>
-      <div class="span4 margin_little">
+      <div class="span4 card">
         <h5 class="comment"><%= link_to post.title, post %></h5>
         <p>
         <%= time_ago_in_words post.created_at %> ago

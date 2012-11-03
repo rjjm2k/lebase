@@ -156,10 +156,25 @@ ol li {            /* ===== TEXT in codebase =====*/
   margin: 35px 0 35px 0;
 }
 
-.margin_little {
-  position: relative;
+.card {
+  width: 210px;
+  height: 235px;
   float: left;
-  padding: 20px 0 30px 0;
+  word-wrap: break-word;
+  margin: 0 20px 20px 0;
+  position: relative;
+  text-align: left;
+  background: white;
+  padding: 15px;
+  -webkit-box-shadow: 0 0 6px;
+}
+
+.pcard {
+  margin: 0 0 20px 0;
+}
+
+.container {
+  word-wrap: break-word;
 }
 
 .btn {
