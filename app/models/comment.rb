@@ -13,4 +13,6 @@ class Comment < ActiveRecord::Base
   attr_accessible :post_id, :text
 
   belongs_to :post
+
+  default_scope order: 'comments.created_at ASC'
 end
